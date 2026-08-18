@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Lock, ShieldCheck, User, Eye, EyeOff, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function LoginPage() {
@@ -41,12 +42,15 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-[calc(100vh-100px)] bg-slate-50">
       <div className="hidden lg:block lg:w-1/2 relative">
-        <img
+        <Image
           src="/images/login.jpg"
-          alt="Eastern Bank Mobile Banking"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="Eastern Bank Online Banking"
+          fill
+          priority
+          sizes="50vw"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#002D62]/20 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[#002D62]/20 mix-blend-multiply z-10" />
       </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center p-4 py-12">
         <div className="relative bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-100 overflow-hidden">

@@ -106,7 +106,9 @@ export const CATEGORY_HERO_CONTENT = {
     primaryCta: 'Explore Checking',
     secondaryCta: 'Find a Location',
     ctaTarget: 'checking',
-    image: '/images/hero.jpg'
+    image: '/images/hero.jpg',
+    badge: 'Eastern Bank Branch • Boston, MA',
+    alt: 'Eastern Bank personal banker assisting client at Boston branch consultation desk'
   },
   Business: {
     heading: 'Fueling local businesses and local dreams.',
@@ -114,7 +116,9 @@ export const CATEGORY_HERO_CONTENT = {
     primaryCta: 'Business Checking',
     secondaryCta: 'Explore Loans',
     ctaTarget: 'small-business',
-    image: '/images/business_hero.jpg'
+    image: '/images/business_hero.jpg',
+    badge: 'Commercial Business Suite • Boston, MA',
+    alt: 'Eastern Bank commercial advisor reviewing business expansion plan with entrepreneur'
   },
   Commercial: {
     heading: 'Institutional expertise with community roots.',
@@ -122,7 +126,9 @@ export const CATEGORY_HERO_CONTENT = {
     primaryCta: 'Commercial Lending',
     secondaryCta: 'Treasury Services',
     ctaTarget: 'small-business',
-    image: '/images/commercial_hero.jpg'
+    image: '/images/commercial_hero.jpg',
+    badge: 'Executive Boardroom • Financial District',
+    alt: 'Eastern Bank commercial lending director presenting syndicated financing to executive leaders'
   },
   Wealth: {
     heading: 'Thoughtful wealth management for generations.',
@@ -130,7 +136,9 @@ export const CATEGORY_HERO_CONTENT = {
     primaryCta: 'Meet an Advisor',
     secondaryCta: 'Wealth Strategies',
     ctaTarget: 'savings',
-    image: '/images/wealth_hero.jpg'
+    image: '/images/wealth_hero.jpg',
+    badge: 'Private Wealth Advisory • Boston, MA',
+    alt: 'Eastern Bank senior wealth advisor consulting with private client over portfolio strategy'
   },
   'About Us': {
     heading: 'Serving our communities since 1818.',
@@ -138,7 +146,9 @@ export const CATEGORY_HERO_CONTENT = {
     primaryCta: 'Our Mission',
     secondaryCta: 'Community Impact',
     ctaTarget: 'checking',
-    image: '/images/about_hero.jpg'
+    image: '/images/about_hero.jpg',
+    badge: 'Community Foundation • Boston, MA',
+    alt: 'Eastern Bank volunteers and local children participating in community garden revitalization'
   }
 };
 

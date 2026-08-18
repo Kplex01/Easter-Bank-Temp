@@ -55,6 +55,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                window.addEventListener('error', function(e) {
+                  if (e && (e.message?.includes('ethereum') || e.filename?.includes('chrome-extension://'))) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+              }
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-white flex flex-col font-sans text-slate-900 selection:bg-amber-100 selection:text-amber-900">
         <Navbar />
         <main className="flex-grow">

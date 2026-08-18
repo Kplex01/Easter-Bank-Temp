@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { CheckCircle2, ArrowRight, ArrowLeft, ShieldCheck, Sparkles, Building, CreditCard, PiggyBank, Briefcase } from 'lucide-react';
 
 export default function ApplyPage() {
@@ -72,12 +73,15 @@ export default function ApplyPage() {
   return (
     <div className="flex min-h-[calc(100vh-100px)] bg-slate-50">
       <div className="hidden lg:block lg:w-1/2 relative">
-        <img
+        <Image
           src="/images/apply.jpg"
-          alt="Eastern Bank Happy Customers"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="Eastern Bank Customer Success"
+          fill
+          priority
+          sizes="50vw"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#002D62]/20 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[#002D62]/20 mix-blend-multiply z-10" />
       </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center p-4 py-12">
         <div className="relative bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-100 overflow-hidden">

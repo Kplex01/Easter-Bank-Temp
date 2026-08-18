@@ -1,10 +1,10 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { NavCategory } from '../types';
 import { CATEGORY_HERO_CONTENT, PERSONAL_PRODUCTS } from '../data/mockData';
-import Link from 'next/link';
 import { useUIStore } from '../store/useUIStore';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, TrendingUp, Hash, Phone } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -33,9 +33,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Content Column */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            key={`text-${category}`}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="lg:col-span-6 space-y-6 max-w-xl"
           >
             <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#002D62] tracking-tight leading-tight md:leading-[1.2]">
@@ -101,31 +102,55 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Image Column */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="lg:col-span-6"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/60 aspect-[16/11] bg-slate-100 group">
-              <img
-                src={content.image || "/images/hero.jpg"}
-                alt="Modern Eastern Bank branch with bankers assisting customers"
-                className="w-full h-full object-cover object-center transform group-hover:scale-102 transition-transform duration-700 ease-out"
-              />
-              
-              {/* Branch Interior Decorative Badge for brand authenticity */}
-              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm border border-slate-200/80 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span className="text-xs font-semibold text-[#002D62] tracking-wide">
-                  Eastern Bank Branch • Boston, MA
-                </span>
+          {/* Right Image Column with Next.js Optimized Image */}
+          <div className="lg:col-span-6">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/60 aspect-[16/11] bg-slate-200 group">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`img-${category}`}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src={content.image || "/images/hero.jpg"}
+                    alt={content.alt || "Eastern Bank"}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    className="object-cover object-center transform group-hover:scale-102 transition-transform duration-700 ease-out"
+                  />
+                  
+                  {/* Branch / Facility Badge */}
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm border border-slate-200/80 flex items-center gap-2 pointer-events-none z-10">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span className="text-xs font-semibold text-[#002D62] tracking-wide">
+                      {content.badge || "Eastern Bank • Boston, MA"}
+                    </span>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Prefetch other category images in background for instantaneous switching */}
+              <div className="hidden" aria-hidden="true">
+                {Object.values(CATEGORY_HERO_CONTENT).map((item) => (
+                  <Image
+                    key={item.image}
+                    src={item.image}
+                    alt=""
+                    width={1}
+                    height={1}
+                    priority
+                  />
+                ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
