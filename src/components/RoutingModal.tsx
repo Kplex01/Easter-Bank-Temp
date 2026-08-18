@@ -30,7 +30,7 @@ export const RoutingModal: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="bg-white rounded-2xl max-w-sm w-full mx-4 p-6 relative z-10 shadow-xl"
+            className="bg-white rounded-none max-w-sm w-full mx-4 p-6 relative z-10 shadow-xl border border-slate-200"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
@@ -40,7 +40,7 @@ export const RoutingModal: React.FC = () => {
               </div>
               <button
                 onClick={() => setRoutingOpen(false)}
-                className="p-2 -mr-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+                className="p-2 -mr-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-none transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -53,13 +53,13 @@ export const RoutingModal: React.FC = () => {
             </p>
 
             {/* The Number */}
-            <div className="bg-slate-50 border border-slate-100 rounded-lg p-4 mt-4 text-center">
+            <div className="bg-slate-50 border border-slate-200 rounded-none p-4 mt-4 text-center">
               <div className="text-2xl font-bold tracking-widest text-[#002D62] mb-3">
                 011000138
               </div>
               <button
                 onClick={handleCopy}
-                className={`inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
+                className={`inline-flex items-center justify-center gap-2 px-6 py-2 rounded-none font-semibold transition-all ${
                   copied 
                     ? 'bg-emerald-100 text-emerald-700' 
                     : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
@@ -82,7 +82,7 @@ export const RoutingModal: React.FC = () => {
             {/* Action Button */}
             <button
               onClick={() => setRoutingOpen(false)}
-              className="w-full mt-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-lg transition-colors shadow-sm"
+              className="w-full mt-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-none transition-colors shadow-sm"
             >
               Close
             </button>

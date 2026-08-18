@@ -86,7 +86,7 @@ export const OpenAccountModal: React.FC = () => {
       className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4"
       onClick={handleBackdropClick}
     >
-      <div className="relative bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div className="relative bg-white rounded-none max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         {/* Header */}
         <div className="bg-[#002D62] text-white px-6 py-5 flex items-center justify-between">
           <div>
@@ -97,7 +97,7 @@ export const OpenAccountModal: React.FC = () => {
           </div>
           <button
             onClick={() => setApplyOpen(false)}
-            className="text-white/80 hover:text-white p-1.5 rounded-full hover:bg-white/10"
+            className="text-white/80 hover:text-white p-1.5 rounded-none hover:bg-white/10"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
@@ -129,19 +129,19 @@ export const OpenAccountModal: React.FC = () => {
                     <div
                       key={prod.id}
                       onClick={() => setSelectedProduct(prod.id)}
-                      className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex items-start gap-4 ${
+                      className={`p-4 rounded-none border-2 cursor-pointer transition-all flex items-start gap-4 ${
                         isSelected
                           ? 'border-[#002D62] bg-blue-50/40 shadow-sm'
                           : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
-                      <div className={`p-2.5 rounded-lg ${isSelected ? 'bg-[#002D62] text-white' : 'bg-slate-100 text-slate-600'}`}>
+                      <div className={`p-2.5 rounded-none ${isSelected ? 'bg-[#002D62] text-white' : 'bg-slate-100 text-slate-600'}`}>
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <h5 className="font-bold text-sm text-[#002D62]">{prod.name}</h5>
-                          <span className="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">
+                          <span className="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded-none">
                             {prod.min}
                           </span>
                         </div>
@@ -156,7 +156,7 @@ export const OpenAccountModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="px-6 py-2.5 bg-[#002D62] hover:bg-[#00224A] text-white font-semibold text-sm rounded-lg flex items-center gap-2"
+                  className="px-6 py-2.5 bg-[#002D62] hover:bg-[#00224A] text-white font-semibold text-sm rounded-none flex items-center gap-2"
                 >
                   <span>Continue to Personal Info</span>
                   <ArrowRight className="w-4 h-4" />
@@ -179,7 +179,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     placeholder="Jane"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -190,7 +190,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     placeholder="Doe"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
               </div>
@@ -204,7 +204,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="jane.doe@example.com"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="(617) 555-0192"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
               </div>
@@ -228,7 +228,7 @@ export const OpenAccountModal: React.FC = () => {
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   placeholder="100 Federal St, Apt 4B"
-                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                  className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                 />
               </div>
 
@@ -241,7 +241,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.city}
                     onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     placeholder="Boston"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -252,7 +252,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.state}
                     onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                     placeholder="MA"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -263,7 +263,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.zip}
                     onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
                     placeholder="02110"
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
               </div>
@@ -278,7 +278,7 @@ export const OpenAccountModal: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2.5 bg-[#002D62] hover:bg-[#00224A] text-white font-semibold text-sm rounded-lg flex items-center gap-2"
+                  className="px-6 py-2.5 bg-[#002D62] hover:bg-[#00224A] text-white font-semibold text-sm rounded-none flex items-center gap-2"
                 >
                   <span>Continue to Funding</span>
                   <ArrowRight className="w-4 h-4" />
@@ -300,7 +300,7 @@ export const OpenAccountModal: React.FC = () => {
                     required
                     value={formData.dob}
                     onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
-                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
                 <div>
@@ -312,7 +312,7 @@ export const OpenAccountModal: React.FC = () => {
                     value={formData.ssnLast4}
                     onChange={(e) => setFormData({ ...formData, ssnLast4: e.target.value })}
                     placeholder="••••"
-                    className="w-full px-3 py-2 text-sm font-mono tracking-widest border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-sm font-mono tracking-widest border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
               </div>
@@ -327,12 +327,12 @@ export const OpenAccountModal: React.FC = () => {
                     required
                     value={formData.initialDeposit}
                     onChange={(e) => setFormData({ ...formData, initialDeposit: e.target.value })}
-                    className="w-full pl-8 pr-3 py-2.5 text-sm font-semibold text-slate-800 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full pl-8 pr-3 py-2.5 text-sm font-semibold text-slate-800 border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-3.5 rounded-xl border border-amber-200 text-xs text-amber-900 space-y-1">
+              <div className="bg-amber-50 p-3.5 rounded-none border border-amber-200 text-xs text-amber-900 space-y-1">
                 <div className="flex items-center gap-1.5 font-bold">
                   <ShieldCheck className="w-4 h-4 text-amber-700" />
                   <span>FDIC Insurance Coverage</span>
@@ -353,11 +353,11 @@ export const OpenAccountModal: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-2.5 bg-[#E8590C] hover:bg-[#D9480F] text-white font-bold text-sm rounded-lg flex items-center gap-2 shadow-sm"
+                  className="px-6 py-2.5 bg-[#E8590C] hover:bg-[#D9480F] text-white font-bold text-sm rounded-none flex items-center gap-2 shadow-sm"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-none animate-spin" />
                       <span>Creating Account...</span>
                     </>
                   ) : (
@@ -371,7 +371,7 @@ export const OpenAccountModal: React.FC = () => {
           {/* Step 4: Success Screen */}
           {step === 4 && (
             <div className="text-center py-4 space-y-5">
-              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-none flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <div className="space-y-1.5">
@@ -384,7 +384,7 @@ export const OpenAccountModal: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-left text-xs space-y-2 text-slate-700">
+              <div className="bg-slate-50 p-4 rounded-none border border-slate-200 text-left text-xs space-y-2 text-slate-700">
                 <div className="flex justify-between">
                   <span>Account Number:</span>
                   <span className="font-mono font-bold text-slate-900">•••• •••• 9284</span>
@@ -405,7 +405,7 @@ export const OpenAccountModal: React.FC = () => {
 
               <button
                 onClick={handleReset}
-                className="w-full py-3 bg-[#002D62] hover:bg-[#002046] text-white font-bold rounded-lg text-sm transition-colors"
+                className="w-full py-3 bg-[#002D62] hover:bg-[#002046] text-white font-bold rounded-none text-sm transition-colors"
               >
                 Go to Home Portal
               </button>

@@ -54,13 +54,13 @@ export const LoginModal: React.FC = () => {
       onClick={handleBackdropClick}
     >
       <div 
-        className="relative bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 duration-150"
+        className="relative bg-white rounded-none max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150"
         role="dialog"
       >
         {/* Header */}
         <div className="bg-[#002D62] text-white px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-none bg-white/10 flex items-center justify-center">
               <Lock className="w-4 h-4 text-white" />
             </div>
             <div>
@@ -70,7 +70,7 @@ export const LoginModal: React.FC = () => {
           </div>
           <button
             onClick={() => setLoginOpen(false)}
-            className="text-white/80 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition-colors"
+            className="text-white/80 hover:text-white p-1.5 rounded-none hover:bg-white/10 transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -80,7 +80,7 @@ export const LoginModal: React.FC = () => {
         {/* Success View */}
         {loginSuccess ? (
           <div className="p-8 text-center space-y-5">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-none flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-10 h-10" />
             </div>
             <div className="space-y-2">
@@ -89,7 +89,7 @@ export const LoginModal: React.FC = () => {
                 You have successfully authenticated to your <span className="font-semibold capitalize">{activeTab} Banking</span> dashboard.
               </p>
             </div>
-            <div className="bg-slate-50 p-4 rounded-xl text-left border border-slate-200 text-xs space-y-1.5 text-slate-600">
+            <div className="bg-slate-50 p-4 rounded-none text-left border border-slate-200 text-xs space-y-1.5 text-slate-600">
               <div className="flex justify-between">
                 <span>Account:</span>
                 <span className="font-semibold text-slate-800">Premier Checking (...4829)</span>
@@ -105,7 +105,7 @@ export const LoginModal: React.FC = () => {
             </div>
             <button
               onClick={handleReset}
-              className="w-full py-3 bg-[#002D62] hover:bg-[#002046] text-white font-semibold rounded-lg shadow-sm transition-colors text-sm"
+              className="w-full py-3 bg-[#002D62] hover:bg-[#002046] text-white font-semibold rounded-none shadow-sm transition-colors text-sm"
             >
               Return to Website
             </button>
@@ -114,11 +114,11 @@ export const LoginModal: React.FC = () => {
           /* Login Form */
           <div className="p-6 space-y-5">
             {/* Account Type Tabs */}
-            <div className="flex rounded-lg bg-slate-100 p-1 text-xs font-semibold text-slate-600">
+            <div className="flex rounded-none bg-slate-100 p-1 text-xs font-semibold text-slate-600">
               <button
                 type="button"
                 onClick={() => setActiveTab('personal')}
-                className={`flex-1 py-2 rounded-md transition-all ${
+                className={`flex-1 py-2 rounded-none transition-all ${
                   activeTab === 'personal'
                     ? 'bg-white text-[#002D62] shadow-sm font-bold'
                     : 'hover:text-slate-900'
@@ -129,7 +129,7 @@ export const LoginModal: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab('business')}
-                className={`flex-1 py-2 rounded-md transition-all ${
+                className={`flex-1 py-2 rounded-none transition-all ${
                   activeTab === 'business'
                     ? 'bg-white text-[#002D62] shadow-sm font-bold'
                     : 'hover:text-slate-900'
@@ -140,7 +140,7 @@ export const LoginModal: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab('wealth')}
-                className={`flex-1 py-2 rounded-md transition-all ${
+                className={`flex-1 py-2 rounded-none transition-all ${
                   activeTab === 'wealth'
                     ? 'bg-white text-[#002D62] shadow-sm font-bold'
                     : 'hover:text-slate-900'
@@ -151,7 +151,7 @@ export const LoginModal: React.FC = () => {
             </div>
 
             {errorMessage && (
-              <div className="flex items-center gap-2 p-3 bg-red-50 text-red-700 text-xs rounded-lg border border-red-200">
+              <div className="flex items-center gap-2 p-3 bg-red-50 text-red-700 text-xs rounded-none border border-red-200">
                 <AlertCircle className="w-4 h-4 flex-shrink-0" />
                 <span>{errorMessage}</span>
               </div>
@@ -171,7 +171,7 @@ export const LoginModal: React.FC = () => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder={activeTab === 'business' ? 'Enter corporate ID' : 'Enter username'}
-                    className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent transition-all"
+                    className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-300 rounded-none text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent transition-all"
                   />
                 </div>
               </div>
@@ -189,7 +189,7 @@ export const LoginModal: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter password"
-                    className="w-full pl-9 pr-10 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent transition-all"
+                    className="w-full pl-9 pr-10 py-2.5 bg-slate-50 border border-slate-300 rounded-none text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent transition-all"
                   />
                   <button
                     type="button"
@@ -207,7 +207,7 @@ export const LoginModal: React.FC = () => {
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="rounded border-slate-300 text-[#002D62] focus:ring-[#002D62]"
+                    className="rounded-none border-slate-300 text-[#002D62] focus:ring-[#002D62]"
                   />
                   <span>Remember username</span>
                 </label>
@@ -223,11 +223,11 @@ export const LoginModal: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 bg-[#002D62] hover:bg-[#002046] disabled:opacity-75 text-white font-bold rounded-lg shadow-sm transition-colors text-sm flex items-center justify-center gap-2"
+                className="w-full py-3 bg-[#002D62] hover:bg-[#002046] disabled:opacity-75 text-white font-bold rounded-none shadow-sm transition-colors text-sm flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-none animate-spin" />
                     <span>Verifying Credentials...</span>
                   </>
                 ) : (

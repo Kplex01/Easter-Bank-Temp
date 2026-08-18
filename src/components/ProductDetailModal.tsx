@@ -47,7 +47,7 @@ export const ProductDetailModal: React.FC = () => {
       className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4"
       onClick={handleBackdropClick}
     >
-      <div className="relative bg-white rounded-2xl max-w-3xl w-full shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 duration-150 max-h-[90vh] flex flex-col">
+      <div className="relative bg-white rounded-none max-w-3xl w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150 max-h-[90vh] flex flex-col">
         {/* Modal Header */}
         <div className="bg-[#002D62] text-white px-6 py-5 flex items-center justify-between flex-shrink-0">
           <div>
@@ -58,7 +58,7 @@ export const ProductDetailModal: React.FC = () => {
           </div>
           <button
             onClick={() => setSelectedProduct(null)}
-            className="text-white/80 hover:text-white p-1.5 rounded-full hover:bg-white/10"
+            className="text-white/80 hover:text-white p-1.5 rounded-none hover:bg-white/10"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
@@ -69,12 +69,12 @@ export const ProductDetailModal: React.FC = () => {
         <div className="p-6 md:p-8 space-y-6 overflow-y-auto flex-1">
           {/* Rate Banner */}
           {product.details?.rate && (
-            <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-4 flex items-center justify-between">
+            <div className="bg-amber-50/80 border border-amber-200 rounded-none p-4 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-amber-900 uppercase tracking-wide">Featured Offer</span>
                 <p className="text-base font-bold text-[#002D62]">{product.details.rate}</p>
               </div>
-              <span className="text-xs font-semibold text-amber-800 bg-amber-200/70 px-2.5 py-1 rounded-md">
+              <span className="text-xs font-semibold text-amber-800 bg-amber-200/70 px-2.5 py-1 rounded-none">
                 {product.details.minDeposit}
               </span>
             </div>
@@ -91,7 +91,7 @@ export const ProductDetailModal: React.FC = () => {
             <h4 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">Key Features & Inclusions</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {product.details?.features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-none border border-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <span className="leading-snug">{feature}</span>
                 </div>
@@ -101,7 +101,7 @@ export const ProductDetailModal: React.FC = () => {
 
           {/* Interactive Calculator Section based on Product Type */}
           {product.id === 'savings' && (
-            <div className="bg-blue-50/60 p-5 rounded-xl border border-blue-200 space-y-4">
+            <div className="bg-blue-50/60 p-5 rounded-none border border-blue-200 space-y-4">
               <div className="flex items-center gap-2 text-[#002D62] font-bold text-sm">
                 <Calculator className="w-4 h-4" />
                 <span>Certificate of Deposit (CD) Return Estimator</span>
@@ -120,7 +120,7 @@ export const ProductDetailModal: React.FC = () => {
                     step="500"
                     value={cdAmount}
                     onChange={(e) => setCdAmount(Number(e.target.value))}
-                    className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer accent-[#002D62]"
+                    className="w-full h-2 bg-blue-200 rounded-none appearance-none cursor-pointer accent-[#002D62]"
                   />
                 </div>
 
@@ -132,7 +132,7 @@ export const ProductDetailModal: React.FC = () => {
                         key={cd.term}
                         type="button"
                         onClick={() => setSelectedCdIndex(index)}
-                        className={`p-2 rounded-lg text-center border transition-all ${
+                        className={`p-2 rounded-none text-center border transition-all ${
                           selectedCdIndex === index
                             ? 'bg-[#002D62] text-white border-[#002D62] font-bold shadow-sm'
                             : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
@@ -145,7 +145,7 @@ export const ProductDetailModal: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-3 bg-white rounded-lg border border-blue-200 flex items-center justify-between text-xs">
+                <div className="p-3 bg-white rounded-none border border-blue-200 flex items-center justify-between text-xs">
                   <div>
                     <span className="text-slate-500">Estimated Interest Earned:</span>
                     <p className="text-base font-extrabold text-emerald-600">+${totalCdEarnings.toFixed(2)}</p>
@@ -160,7 +160,7 @@ export const ProductDetailModal: React.FC = () => {
           )}
 
           {product.id === 'mortgages' && (
-            <div className="bg-blue-50/60 p-5 rounded-xl border border-blue-200 space-y-4">
+            <div className="bg-blue-50/60 p-5 rounded-none border border-blue-200 space-y-4">
               <div className="flex items-center gap-2 text-[#002D62] font-bold text-sm">
                 <Calculator className="w-4 h-4" />
                 <span>Monthly Mortgage Payment Estimator</span>
@@ -179,7 +179,7 @@ export const ProductDetailModal: React.FC = () => {
                     step="10000"
                     value={homePrice}
                     onChange={(e) => setHomePrice(Number(e.target.value))}
-                    className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer accent-[#002D62]"
+                    className="w-full h-2 bg-blue-200 rounded-none appearance-none cursor-pointer accent-[#002D62]"
                   />
                 </div>
 
@@ -195,12 +195,12 @@ export const ProductDetailModal: React.FC = () => {
                     step="1"
                     value={downPaymentPercent}
                     onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
-                    className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer accent-[#002D62]"
+                    className="w-full h-2 bg-blue-200 rounded-none appearance-none cursor-pointer accent-[#002D62]"
                   />
                 </div>
               </div>
 
-              <div className="p-3 bg-white rounded-lg border border-blue-200 flex items-center justify-between text-xs">
+              <div className="p-3 bg-white rounded-none border border-blue-200 flex items-center justify-between text-xs">
                 <div>
                   <span className="text-slate-500">Estimated Principal & Interest:</span>
                   <p className="text-lg font-extrabold text-[#002D62]">
@@ -220,7 +220,7 @@ export const ProductDetailModal: React.FC = () => {
             <ul className="space-y-1.5 text-xs text-slate-600">
               {product.details?.benefits.map((b, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E58316]"></span>
+                  <span className="w-1.5 h-1.5 rounded-none bg-[#E58316]"></span>
                   <span>{b}</span>
                 </li>
               ))}
@@ -242,7 +242,7 @@ export const ProductDetailModal: React.FC = () => {
               setSelectedProduct(null);
               setApplyOpen(true);
             }}
-            className="px-6 py-2.5 bg-[#E8590C] hover:bg-[#D9480F] text-white font-bold text-sm rounded-lg shadow-sm flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
+            className="px-6 py-2.5 bg-[#E8590C] hover:bg-[#D9480F] text-white font-bold text-sm rounded-none shadow-sm flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
           >
             <span>Apply for {product.title}</span>
             <ArrowRight className="w-4 h-4" />

@@ -40,12 +40,12 @@ export const LocationModal: React.FC = () => {
       className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4"
       onClick={handleBackdropClick}
     >
-      <div className="relative bg-white rounded-2xl w-full max-w-5xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] flex flex-col">
+      <div className="relative bg-white rounded-none w-full max-w-5xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 max-h-[90vh] flex flex-col border border-slate-200">
         
         {/* Header */}
         <div className="bg-[#002D62] text-white px-6 py-4 flex items-start sm:items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-3">
-            <div className="bg-white/10 p-2 rounded-lg hidden sm:block">
+            <div className="bg-white/10 p-2 rounded-none hidden sm:block">
               <MapPin className="w-6 h-6 text-emerald-400" />
             </div>
             <div>
@@ -55,7 +55,7 @@ export const LocationModal: React.FC = () => {
           </div>
           <button
             onClick={() => setLocationOpen(false)}
-            className="text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+            className="text-white/80 hover:text-white p-2 rounded-none hover:bg-white/10 transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -73,14 +73,14 @@ export const LocationModal: React.FC = () => {
               placeholder="Search by city, address, or ZIP (e.g. Boston, Cambridge, 02110)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent transition-shadow"
+              className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-none text-sm focus:outline-none focus:ring-2 focus:ring-[#002D62] focus:border-transparent transition-shadow"
             />
           </div>
           
           <div className="flex items-center gap-2 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0 scrollbar-hide">
             <button
               onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${
+              className={`px-4 py-2 rounded-none text-sm font-semibold whitespace-nowrap transition-colors ${
                 activeFilter === 'all' 
                   ? 'bg-[#002D62] text-white border border-[#002D62]' 
                   : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50'
@@ -90,7 +90,7 @@ export const LocationModal: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('atm')}
-              className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${
+              className={`px-4 py-2 rounded-none text-sm font-semibold whitespace-nowrap transition-colors ${
                 activeFilter === 'atm' 
                   ? 'bg-[#002D62] text-white border border-[#002D62]' 
                   : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50'
@@ -100,7 +100,7 @@ export const LocationModal: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveFilter('driveUp')}
-              className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors ${
+              className={`px-4 py-2 rounded-none text-sm font-semibold whitespace-nowrap flex items-center gap-1.5 transition-colors ${
                 activeFilter === 'driveUp' 
                   ? 'bg-[#002D62] text-white border border-[#002D62]' 
                   : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50'
@@ -124,7 +124,7 @@ export const LocationModal: React.FC = () => {
                   <div 
                     key={branch.id} 
                     onClick={() => setSelectedBranchId(branch.id)}
-                    className={`p-4 rounded-xl cursor-pointer transition-all duration-200 ${
+                    className={`p-4 rounded-none cursor-pointer transition-all duration-200 ${
                       isSelected 
                         ? 'border-2 border-[#002D62] bg-blue-50/50 shadow-sm' 
                         : 'border border-slate-200 bg-white hover:border-[#002D62]/40 hover:shadow-sm'
@@ -132,7 +132,7 @@ export const LocationModal: React.FC = () => {
                   >
                     <div className="flex justify-between items-start gap-2">
                       <h4 className="font-bold text-[15px] text-[#002D62] leading-tight">{branch.name}</h4>
-                      <span className="text-emerald-600 font-semibold text-xs whitespace-nowrap bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                      <span className="text-emerald-600 font-semibold text-xs whitespace-nowrap bg-emerald-50 px-2 py-0.5 rounded-none border border-emerald-100">
                         {branch.distance}
                       </span>
                     </div>
@@ -168,21 +168,21 @@ export const LocationModal: React.FC = () => {
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="relative animate-in zoom-in duration-300">
                   {/* Tooltip */}
-                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-white px-3.5 py-1.5 rounded-lg shadow-lg text-sm font-bold text-[#002D62] whitespace-nowrap border border-slate-100 z-10">
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-white px-3.5 py-1.5 rounded-none shadow-lg text-sm font-bold text-[#002D62] whitespace-nowrap border border-slate-100 z-10">
                     {selectedBranch.name}
                     <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 border-r border-b border-slate-100"></div>
                   </div>
                   {/* Pin */}
                   <MapPin className="w-10 h-10 text-[#E8590C] drop-shadow-md relative z-20" fill="white" />
                   {/* Pin shadow */}
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-2 bg-slate-900/20 blur-[2px] rounded-full"></div>
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-2 bg-slate-900/20 blur-[2px] rounded-none"></div>
                 </div>
               </div>
             </div>
 
             {/* Branch Details */}
             <div className="p-4 sm:p-6 lg:p-8 flex-1">
-              <div className="bg-white rounded-xl border border-slate-200 p-5 sm:p-7 shadow-sm">
+              <div className="bg-white rounded-none border border-slate-200 p-5 sm:p-7 shadow-sm">
                 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                   <div>
@@ -192,14 +192,14 @@ export const LocationModal: React.FC = () => {
                       {selectedBranch.city}, {selectedBranch.state} {selectedBranch.zip}
                     </p>
                   </div>
-                  <button className="w-full sm:w-auto bg-[#002D62] hover:bg-[#00224A] text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-sm transition-colors flex items-center justify-center gap-2">
+                  <button className="w-full sm:w-auto bg-[#002D62] hover:bg-[#00224A] text-white px-5 py-2.5 rounded-none text-sm font-semibold shadow-sm transition-colors flex items-center justify-center gap-2">
                     <Navigation className="w-4 h-4" />
                     Get Directions
                   </button>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                  <div className="bg-slate-50 p-4 rounded-none border border-slate-100">
                     <div className="flex items-center gap-2 mb-2 text-[#002D62] font-bold text-sm">
                       <Clock className="w-4 h-4 text-[#E8590C]" />
                       Lobby Hours
@@ -209,7 +209,7 @@ export const LocationModal: React.FC = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                  <div className="bg-slate-50 p-4 rounded-none border border-slate-100">
                     <div className="flex items-center gap-2 mb-2 text-[#002D62] font-bold text-sm">
                       <Phone className="w-4 h-4 text-[#E8590C]" />
                       Branch Direct
@@ -225,13 +225,13 @@ export const LocationModal: React.FC = () => {
                   <h4 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-4">Branch Services & Features:</h4>
                   <div className="flex flex-wrap gap-2.5">
                     {selectedBranch.features.map((feature, idx) => (
-                      <div key={idx} className="bg-blue-50/70 text-[#002D62] border border-blue-100/80 px-3.5 py-1.5 rounded-full text-[13px] font-semibold flex items-center gap-1.5 shadow-sm">
+                      <div key={idx} className="bg-blue-50/70 text-[#002D62] border border-blue-100/80 px-3.5 py-1.5 rounded-none text-[13px] font-semibold flex items-center gap-1.5 shadow-sm">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                         {feature}
                       </div>
                     ))}
                     {selectedBranch.hasDriveThru && (
-                      <div className="bg-blue-50/70 text-[#002D62] border border-blue-100/80 px-3.5 py-1.5 rounded-full text-[13px] font-semibold flex items-center gap-1.5 shadow-sm">
+                      <div className="bg-blue-50/70 text-[#002D62] border border-blue-100/80 px-3.5 py-1.5 rounded-none text-[13px] font-semibold flex items-center gap-1.5 shadow-sm">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                         Drive-Thru Window
                       </div>

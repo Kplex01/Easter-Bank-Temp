@@ -23,7 +23,7 @@ export const HelpModal: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="bg-white rounded-2xl max-w-sm w-full mx-4 p-6 relative z-10 shadow-xl"
+            className="bg-white rounded-none max-w-sm w-full mx-4 p-6 relative z-10 shadow-xl border border-slate-200"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
@@ -33,7 +33,7 @@ export const HelpModal: React.FC = () => {
               </div>
               <button
                 onClick={() => setHelpOpen(false)}
-                className="p-2 -mr-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
+                className="p-2 -mr-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-none transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -46,14 +46,14 @@ export const HelpModal: React.FC = () => {
             </p>
 
             {/* The Number */}
-            <div className="bg-slate-50 border border-slate-100 rounded-lg p-4 mt-4 text-center text-lg font-semibold text-slate-900">
+            <div className="bg-slate-50 border border-slate-200 rounded-none p-4 mt-4 text-center text-lg font-semibold text-slate-900">
               +1 (786) 665-5317
             </div>
 
             {/* Action Button */}
             <button
               onClick={() => setHelpOpen(false)}
-              className="w-full mt-6 py-3 bg-[#002D62] hover:bg-[#001b3b] text-white font-semibold rounded-lg transition-colors shadow-sm"
+              className="w-full mt-6 py-3 bg-[#002D62] hover:bg-[#001b3b] text-white font-semibold rounded-none transition-colors shadow-sm"
             >
               Close
             </button>

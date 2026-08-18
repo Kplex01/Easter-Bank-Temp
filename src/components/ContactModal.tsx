@@ -30,10 +30,10 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="relative bg-white rounded-2xl max-w-lg w-full shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div className="relative bg-white rounded-none max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         <div className="bg-[#002D62] text-white px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-none bg-white/10 flex items-center justify-center">
               <Phone className="w-4 h-4 text-white" />
             </div>
             <div>
@@ -43,7 +43,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           </div>
           <button
             onClick={onClose}
-            className="text-white/80 hover:text-white p-1.5 rounded-full hover:bg-white/10"
+            className="text-white/80 hover:text-white p-1.5 rounded-none hover:bg-white/10"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
@@ -53,7 +53,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
         <div className="p-6">
           {submitted ? (
             <div className="text-center py-6 space-y-4">
-              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-none flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h4 className="font-bold text-lg text-[#002D62]">Message Sent Successfully</h4>
@@ -62,7 +62,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               </p>
               <button
                 onClick={handleReset}
-                className="w-full py-2.5 bg-[#002D62] text-white font-semibold rounded-lg text-sm"
+                className="w-full py-2.5 bg-[#002D62] text-white font-semibold rounded-none text-sm"
               >
                 Close
               </button>
@@ -71,14 +71,14 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
             <div className="space-y-5">
               {/* Direct Phone Numbers */}
               <div className="grid grid-cols-2 gap-3 text-xs">
-                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
                   <span className="font-bold text-slate-700 block">General Support:</span>
                   <a href="tel:18003278376" className="text-[#002D62] font-semibold hover:underline">
                     1-800-EASTERN (327-8376)
                   </a>
                   <p className="text-slate-500 text-[11px] mt-0.5">Mon–Fri: 7am–8pm</p>
                 </div>
-                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
                   <span className="font-bold text-slate-700 block">Lost/Stolen Card:</span>
                   <a href="tel:18005550199" className="text-red-700 font-semibold hover:underline">
                     1-800-555-0199
@@ -98,7 +98,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Jane Doe"
-                      className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                      className="w-full px-3 py-2 text-xs border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -109,7 +109,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="jane@example.com"
-                      className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                      className="w-full px-3 py-2 text-xs border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   <select
                     value={topic}
                     onChange={(e) => setTopic(e.target.value)}
-                    className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-xs border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   >
                     <option>Personal Banking Inquiry</option>
                     <option>Small Business & Merchant Services</option>
@@ -137,13 +137,13 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="How can we assist you today?"
-                    className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#002D62] focus:outline-none"
+                    className="w-full px-3 py-2 text-xs border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 bg-[#002D62] hover:bg-[#002046] text-white font-bold text-xs rounded-lg flex items-center justify-center gap-1.5 shadow-sm transition-colors"
+                  className="w-full py-2.5 bg-[#002D62] hover:bg-[#002046] text-white font-bold text-xs rounded-none flex items-center justify-center gap-1.5 shadow-sm transition-colors"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Send Message</span>
