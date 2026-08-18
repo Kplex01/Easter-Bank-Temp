@@ -1,0 +1,6 @@
+{
+  "name": "Eastern Bank",
+  "description": "Modern Eastern Bank portal featuring checking, savings, mortgages, small business banking solutions, online account opening, branch locator, and secure online login.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,10 @@
+import React from 'react';
+
+export const Logo = ({ className = "w-8 h-8" }: { className?: string }) => (
+  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <circle cx="20" cy="20" r="20" fill="#0F172A" />
+    <g transform="rotate(-45 20 20)" fill="#FFFFFF">
+      <path d="M12 10H28V14H16V18H25V22H16V26H28V30H12V10Z" />
+    </g>
+  </svg>
+);
