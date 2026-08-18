@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -55,8 +56,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script
+      <body className="min-h-screen bg-white flex flex-col font-sans text-slate-900 selection:bg-amber-100 selection:text-amber-900">
+        <Script
+          id="extension-error-filter"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               if (typeof window !== 'undefined') {
@@ -70,8 +73,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="min-h-screen bg-white flex flex-col font-sans text-slate-900 selection:bg-amber-100 selection:text-amber-900">
         <Navbar />
         <main className="flex-grow">
           {children}
