@@ -73,15 +73,15 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
                   <span className="font-bold text-slate-700 block">General Support:</span>
-                  <a href="tel:18003278376" className="text-[#002D62] font-semibold hover:underline">
-                    1-800-EASTERN (327-8376)
+                  <a href="tel:+17866655317" className="text-[#002D62] font-semibold hover:underline">
+                    +1 (786) 665-5317
                   </a>
                   <p className="text-slate-500 text-[11px] mt-0.5">Mon–Fri: 7am–8pm</p>
                 </div>
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
                   <span className="font-bold text-slate-700 block">Lost/Stolen Card:</span>
-                  <a href="tel:18005550199" className="text-red-700 font-semibold hover:underline">
-                    1-800-555-0199
+                  <a href="tel:+17866655317" className="text-red-700 font-semibold hover:underline">
+                    +1 (786) 665-5317
                   </a>
                   <p className="text-slate-500 text-[11px] mt-0.5">24/7 Rapid Assistance</p>
                 </div>

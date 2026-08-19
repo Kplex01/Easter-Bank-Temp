@@ -137,10 +137,14 @@ export const LocationModal: React.FC = () => {
                       </span>
                     </div>
                     <p className="text-slate-600 text-sm mt-1.5">{branch.address}, {branch.city}, {branch.state} {branch.zip}</p>
-                    <div className="flex items-center gap-1.5 text-slate-500 text-sm mt-2 font-medium">
+                    <a 
+                      href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`}
+                      className="flex items-center gap-1.5 text-slate-500 hover:text-[#002D62] text-sm mt-2 font-medium transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <Phone className="w-3.5 h-3.5" />
                       {branch.phone}
-                    </div>
+                    </a>
                   </div>
                 );
               })
@@ -214,9 +218,12 @@ export const LocationModal: React.FC = () => {
                       <Phone className="w-4 h-4 text-[#E8590C]" />
                       Branch Direct
                     </div>
-                    <p className="text-slate-700 text-lg font-bold">
+                    <a 
+                      href={`tel:${selectedBranch.phone.replace(/[^0-9+]/g, '')}`}
+                      className="text-slate-700 hover:text-[#002D62] text-lg font-bold hover:underline inline-block transition-colors"
+                    >
                       {selectedBranch.phone}
-                    </p>
+                    </a>
                     <p className="text-slate-500 text-xs mt-1">Available during lobby hours</p>
                   </div>
                 </div>

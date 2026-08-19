@@ -214,7 +214,7 @@ export const OpenAccountModal: React.FC = () => {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="(617) 555-0192"
+                    placeholder="+1 (786) 665-5317"
                     className="w-full px-3 py-2 text-sm border border-slate-300 rounded-none focus:ring-2 focus:ring-[#002D62] focus:outline-none"
                   />
                 </div>

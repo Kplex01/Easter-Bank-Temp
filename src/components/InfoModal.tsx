@@ -35,7 +35,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
         <div className="p-6 space-y-4 text-sm text-slate-700 leading-relaxed">
           <p>{content}</p>
           <div className="bg-slate-50 p-3 rounded-none border border-slate-200 text-xs text-slate-500">
-            For specific compliance or regulatory questions, please contact Eastern Bank Legal & Compliance at compliance@easternbank.com or call 1-800-EASTERN.
+            For specific compliance or regulatory questions, please contact Eastern Bank Legal & Compliance at compliance@easternbank.com or call +1 (786) 665-5317.
           </div>
           <button
             onClick={onClose}
